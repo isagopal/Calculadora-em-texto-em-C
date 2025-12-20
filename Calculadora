@@ -31,3 +31,9 @@ int divisao(int a, int b){
     scanf("Digite o segundo resultado: %d", &b);
     printf("Resultado: %d / %d = %d", a, b, d);
 }
+
+int menu(){
+    printf("===============================\n\tCalculadora Simples\n===============================\n");
+    printf("Selecione uma operacao:");
+    printf("1. Adicao\n2. Subtracao\n3. Multiplicacao\n4. Divisao\n5. Sair\nOpcao: ");
+}
