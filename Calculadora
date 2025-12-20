@@ -2,7 +2,7 @@
 
 void outra_operacao(){
     char afirmacao;
-    scanf("Deseja realizar outra operação? (s/n): %c\n", &afirmacao);
+    scanf("Deseja realizar outra operacao? (s/n): %c\n", &afirmacao);
     if (afirmacao == 's'
     || afirmacao == 'S') {
         menu();
@@ -12,6 +12,7 @@ void outra_operacao(){
     } else {
         do{
             printf("Resposta invalida. Por favor, digite 's' para sim ou 'n' para nao.\n");
+            scanf("%c", &afirmacao);
         } while (afirmacao != 's'
                 && afirmacao != 'S'
                 && afirmacao != 'n'
@@ -65,7 +66,7 @@ int menu(){
     printf("===============================\n\tCalculadora Simples\n===============================\n");
     printf("Selecione uma operacao:\n");
     printf("1. Adicao\n2. Subtracao\n3. Multiplicacao\n4. Divisao\n5. Sair\n");
-    scanf("Opcao: %d\n");
+    scanf("Opcao: %d\n", &opcao_escolhida);
 
     switch(opcao_escolhida) {
         case 1: 
@@ -92,4 +93,12 @@ int menu(){
                 && opcao_escolhida != 4
                 && opcao_escolhida != 5);
     }
+    return opcao_escolhida;
+}
+
+int main() {
+    int escolha;
+    do{
+    escolha = menu();
+    } while(escolha != 5);
 }
