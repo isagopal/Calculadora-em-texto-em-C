@@ -25,6 +25,7 @@ void soma(){
     scanf("Digite o segundo numero: %d\n", &b);
     s = a+b;
     printf("Resultado: %d + %d = %d\n", a, b, s);
+    outra_operacao();
 }
 
 void subtracao(){
@@ -33,6 +34,7 @@ void subtracao(){
     scanf("Digite o segundo numero: %d\n", &b);
     sub = a-b;
     printf("Resultado: %d - %d = %d\n", a, b, sub);
+    outra_operacao();
 }
 
 void multiplicacao(){
@@ -41,6 +43,7 @@ void multiplicacao(){
     scanf("Digite o segundo numero: %d\n", &b);
     m = a*b;
     printf("Resultado: %d * %d = %d\n", a, b, m);
+    outra_operacao();
 }
 
 void divisao(){
@@ -49,9 +52,11 @@ void divisao(){
     scanf("Digite o segundo numero: %d\n", &b);
     if (b == 0) {
         printf("Erro: Divisão por zero não é permitida.");
+        outra_operacao();
     } else {
         d = a/b;
         printf("Resultado: %d / %d = %d\n", a, b, d);
+        outra_operacao();
     }
 }
 
