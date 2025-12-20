@@ -2,7 +2,8 @@
 
 void outra_operacao(){
     char afirmacao;
-    scanf("Deseja realizar outra operacao? (s/n): %c\n", &afirmacao);
+    printf("Deseja realizar outra operacao? (s/n):\n");
+    scanf(" %c\n", &afirmacao);
     if (afirmacao == 's'
     || afirmacao == 'S') {
         menu();
@@ -22,8 +23,10 @@ void outra_operacao(){
 
 void soma(){
     int s, a, b;
-    scanf("Digite o primeiro numero: %d\n", &a);
-    scanf("Digite o segundo numero: %d\n", &b);
+    printf("Digite o primeiro numero: \n");
+    scanf("%d", &a);
+    printf("Digite o segundo numero: \n");
+    scanf("%d", &b);
     s = a+b;
     printf("Resultado: %d + %d = %d\n", a, b, s);
     outra_operacao();
@@ -31,8 +34,10 @@ void soma(){
 
 void subtracao(){
     int sub, a, b;
-    scanf("Digite o primeiro numero: %d\n", &a);
-    scanf("Digite o segundo numero: %d\n", &b);
+    printf("Digite o primeiro numero: \n");
+    scanf("%d", &a);
+    printf("Digite o segundo numero: \n");
+    scanf("%d", &b);
     sub = a-b;
     printf("Resultado: %d - %d = %d\n", a, b, sub);
     outra_operacao();
@@ -40,8 +45,10 @@ void subtracao(){
 
 void multiplicacao(){
     int m, a, b;
-    scanf("Digite o primeiro numero: %d\n", &a);
-    scanf("Digite o segundo numero: %d\n", &b);
+    printf("Digite o primeiro numero: \n");
+    scanf("%d", &a);
+    printf("Digite o segundo numero: \n");
+    scanf("%d", &b);
     m = a*b;
     printf("Resultado: %d * %d = %d\n", a, b, m);
     outra_operacao();
@@ -49,8 +56,10 @@ void multiplicacao(){
 
 void divisao(){
     int d, a, b;
-    scanf("Digite o primeiro numero: %d\n", &a);
-    scanf("Digite o segundo numero: %d\n", &b);
+    printf("Digite o primeiro numero: \n");
+    scanf("%d", &a);
+    printf("Digite o segundo numero: \n");
+    scanf("%d", &b);
     if (b == 0) {
         printf("Erro: Divisão por zero não é permitida.");
         outra_operacao();
@@ -66,7 +75,8 @@ int menu(){
     printf("===============================\n\tCalculadora Simples\n===============================\n");
     printf("Selecione uma operacao:\n");
     printf("1. Adicao\n2. Subtracao\n3. Multiplicacao\n4. Divisao\n5. Sair\n");
-    scanf("Opcao: %d\n", &opcao_escolhida);
+    printf("Opcao: \n");
+    scanf("%d", &opcao_escolhida);
 
     switch(opcao_escolhida) {
         case 1: 
@@ -86,7 +96,8 @@ int menu(){
             break;
         default:
             do{
-                scanf("Resposta invalida. Por favor, digite uma das opcoes validas no menu. %d\n", &opcao_escolhida);
+                printf("Resposta invalida. Por favor, digite uma das opcoes validas no menu.\n");
+                scanf("%d", &opcao_escolhida);
             } while (opcao_escolhida != 1
                 && opcao_escolhida != 2
                 && opcao_escolhida != 3
