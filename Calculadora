@@ -7,3 +7,11 @@ int soma(int a, int b){
     scanf("Digite o segundo resultado: %d", &b);
     printf("Resultado: %d + %d = %d", a, b, s);
 }
+
+int subtracao(int a, int b){
+    int sub;
+    sub = a+b;
+    scanf("Digite o primeiro resultado: %d", &a);
+    scanf("Digite o segundo resultado: %d", &b);
+    printf("Resultado: %d - %d = %d", a, b, sub);
+}
