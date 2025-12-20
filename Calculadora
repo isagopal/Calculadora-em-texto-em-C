@@ -24,50 +24,50 @@ void outra_operacao(){
 }
 
 void soma(){
-    int s, a, b;
+    float s, a, b;
     printf("Digite o primeiro numero: \n");
-    scanf("%d", &a);
+    scanf("%f", &a);
     printf("Digite o segundo numero: \n");
-    scanf("%d", &b);
+    scanf("%f", &b);
     s = a+b;
-    printf("Resultado: %d + %d = %d\n", a, b, s);
+    printf("Resultado: %f + %f = %f\n", a, b, s);
     outra_operacao();
 }
 
 void subtracao(){
-    int sub, a, b;
+    float sub, a, b;
     printf("Digite o primeiro numero: \n");
-    scanf("%d", &a);
+    scanf("%f", &a);
     printf("Digite o segundo numero: \n");
-    scanf("%d", &b);
+    scanf("%f", &b);
     sub = a-b;
-    printf("Resultado: %d - %d = %d\n", a, b, sub);
+    printf("Resultado: %f - %f = %f\n", a, b, sub);
     outra_operacao();
 }
 
 void multiplicacao(){
-    int m, a, b;
+    float m, a, b;
     printf("Digite o primeiro numero: \n");
-    scanf("%d", &a);
+    scanf("%f", &a);
     printf("Digite o segundo numero: \n");
-    scanf("%d", &b);
+    scanf("%f", &b);
     m = a*b;
-    printf("Resultado: %d * %d = %d\n", a, b, m);
+    printf("Resultado: %f * %f = %f\n", a, b, m);
     outra_operacao();
 }
 
 void divisao(){
-    int d, a, b;
+    float d, a, b;
     printf("Digite o primeiro numero: \n");
-    scanf("%d", &a);
+    scanf("%f", &a);
     printf("Digite o segundo numero: \n");
-    scanf("%d", &b);
+    scanf("%f", &b);
     if (b == 0) {
         printf("Erro: Divisão por zero não é permitida.");
         outra_operacao();
     } else {
         d = a/b;
-        printf("Resultado: %d / %d = %d\n", a, b, d);
+        printf("Resultado: %f / %f = %f\n", a, b, d);
         outra_operacao();
     }
 }
