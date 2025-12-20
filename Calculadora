@@ -10,8 +10,24 @@ int soma(int a, int b){
 
 int subtracao(int a, int b){
     int sub;
-    sub = a+b;
+    sub = a-b;
     scanf("Digite o primeiro resultado: %d", &a);
     scanf("Digite o segundo resultado: %d", &b);
     printf("Resultado: %d - %d = %d", a, b, sub);
+}
+
+int multiplicacao(int a, int b){
+    int m;
+    m = a*b;
+    scanf("Digite o primeiro resultado: %d", &a);
+    scanf("Digite o segundo resultado: %d", &b);
+    printf("Resultado: %d * %d = %d", a, b, m);
+}
+
+int divisao(int a, int b){
+    int d;
+    d = a/b;
+    scanf("Digite o primeiro resultado: %d", &a);
+    scanf("Digite o segundo resultado: %d", &b);
+    printf("Resultado: %d / %d = %d", a, b, d);
 }
