@@ -1,9 +1,11 @@
 #include <stdio.h>
 
+int menu();
+
 void outra_operacao(){
     char afirmacao;
     printf("Deseja realizar outra operacao? (s/n):\n");
-    scanf(" %c\n", &afirmacao);
+    scanf(" %c", &afirmacao);
     if (afirmacao == 's'
     || afirmacao == 'S') {
         menu();
@@ -13,7 +15,7 @@ void outra_operacao(){
     } else {
         do{
             printf("Resposta invalida. Por favor, digite 's' para sim ou 'n' para nao.\n");
-            scanf("%c", &afirmacao);
+            scanf(" %c", &afirmacao);
         } while (afirmacao != 's'
                 && afirmacao != 'S'
                 && afirmacao != 'n'
