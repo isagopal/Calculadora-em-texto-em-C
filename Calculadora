@@ -1,39 +1,71 @@
 #include <stdio.h>
 
-int soma(int a, int b){
-    int s;
+void soma(){
+    int s, a, b;
+    scanf("Digite o primeiro numero: %d", &a);
+    scanf("Digite o segundo numero: %d", &b);
     s = a+b;
-    scanf("Digite o primeiro resultado: %d", &a);
-    scanf("Digite o segundo resultado: %d", &b);
     printf("Resultado: %d + %d = %d", a, b, s);
 }
 
-int subtracao(int a, int b){
-    int sub;
+void subtracao(){
+    int sub, a, b;
+    scanf("Digite o primeiro numero: %d", &a);
+    scanf("Digite o segundo numero: %d", &b);
     sub = a-b;
-    scanf("Digite o primeiro resultado: %d", &a);
-    scanf("Digite o segundo resultado: %d", &b);
     printf("Resultado: %d - %d = %d", a, b, sub);
 }
 
-int multiplicacao(int a, int b){
-    int m;
+void multiplicacao(){
+    int m, a, b;
+    scanf("Digite o primeiro numero: %d", &a);
+    scanf("Digite o segundo numero: %d", &b);
     m = a*b;
-    scanf("Digite o primeiro resultado: %d", &a);
-    scanf("Digite o segundo resultado: %d", &b);
     printf("Resultado: %d * %d = %d", a, b, m);
 }
 
-int divisao(int a, int b){
-    int d;
+void divisao(){
+    int d, a, b;
+    scanf("Digite o primeiro numero: %d", &a);
+    scanf("Digite o segundo numero: %d", &b);
     d = a/b;
-    scanf("Digite o primeiro resultado: %d", &a);
-    scanf("Digite o segundo resultado: %d", &b);
-    printf("Resultado: %d / %d = %d", a, b, d);
+    if (b == 0) {
+        printf("Erro: Divisão por zero não é permitida.");
+    } else {
+        printf("Resultado: %d / %d = %d", a, b, d);
+    }
 }
 
 int menu(){
+    int opcao_escolhida;
     printf("===============================\n\tCalculadora Simples\n===============================\n");
     printf("Selecione uma operacao:");
-    printf("1. Adicao\n2. Subtracao\n3. Multiplicacao\n4. Divisao\n5. Sair\nOpcao: ");
+    printf("1. Adicao\n2. Subtracao\n3. Multiplicacao\n4. Divisao\n5. Sair\n");
+    scanf("Opcao: %d\n");
+
+    switch(opcao_escolhida) {
+        case 1: 
+            soma();
+            break;
+        case 2:
+            subtracao();
+            break;
+        case 3:
+            multiplicacao();
+            break;
+        case 4:
+            divisao();
+            break;
+        case 5:
+            printf("Obrigado por usar a calculadora! Ate a proxima.");
+            break;
+        default:
+            do{
+                scanf("Resposta invalida. Por favor, digite uma das opcoes validas no menu. %d", &opcao_escolhida);
+            } while (opcao_escolhida != 1
+                && opcao_escolhida != 2
+                && opcao_escolhida != 3
+                && opcao_escolhida != 4
+                && opcao_escolhida != 5);
+    }
 }
