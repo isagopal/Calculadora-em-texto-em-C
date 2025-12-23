@@ -1,85 +1,83 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int menu(){
-    int opcao_escolhida;
-    printf("===============================\n\tCalculadora Simples\n===============================\n");
-    printf("Selecione uma operacao:\n");
-    printf("1. Adicao\n2. Subtracao\n3. Multiplicacao\n4. Divisao\n5. Sair\n");
-    printf("Opcao: ");
-    scanf("%d", &opcao_escolhida);
+int menu() {
+    int opcao;
+    int valido;
 
-    switch(opcao_escolhida) {
-        case 1:{ 
+    do {
+        printf("===============================\n\tCalculadora Simples\n===============================\n");
+        printf("Selecione uma operacao:\n");
+        printf("1. Adicao\n2. Subtracao\n3. Multiplicacao\n4. Divisao\n5. Sair\n");
+        printf("Opcao: ");
+
+        valido = scanf("%d", &opcao);
+
+        if (valido != 1) {
+            while (getchar() != '\n'); 
+            printf("Entrada invalida. Digite um numero de 1 a 5.\n\n");
+            opcao = 0;
+        } else if (opcao < 1 || opcao > 5) {
+            printf("Opcao fora do intervalo. Digite um numero de 1 a 5.\n\n");
+        }
+
+    } while (opcao < 1 || opcao > 5);
+
+    switch(opcao) {
+        case 1: {
             float a, b;
             printf("Digite o primeiro numero: ");
             scanf("%f", &a);
             printf("Digite o segundo numero: ");
             scanf("%f", &b);
-            printf("Resultado: %f + %f = %f\n", a, b, a+b);
+            printf("Resultado: %.2f + %.2f = %.2f\n", a, b, a+b);
             break;
         }
-        case 2:{
+        case 2: {
             float c, d;
             printf("Digite o primeiro numero: ");
             scanf("%f", &c);
             printf("Digite o segundo numero: ");
             scanf("%f", &d);
-            printf("Resultado: %f - %f = %f\n", c, d, c-d);
+            printf("Resultado: %.2f - %.2f = %.2f\n", c, d, c-d);
             break;
         }
-        case 3:{
+        case 3: {
             float e, f;
             printf("Digite o primeiro numero: ");
             scanf("%f", &e);
             printf("Digite o segundo numero: ");
             scanf("%f", &f);
-            printf("Resultado: %f * %f = %f\n", e, f, e*f);
+            printf("Resultado: %.2f * %.2f = %.2f\n", e, f, e*f);
             break;
         }
-        case 4:{
+        case 4: {
             float g, h;
             printf("Digite o primeiro numero: ");
             scanf("%f", &g);
             printf("Digite o segundo numero: ");
             scanf("%f", &h);
             if (h == 0) {
-                printf("Erro: Divisão por zero não é permitida.\n");
+                printf("Erro: Divisao por zero nao e permitida.\n");
             } else {
-                printf("Resultado: %f / %f = %f\n", g, h, g/h);
+                printf("Resultado: %.2f / %.2f = %.2f\n", g, h, g/h);
             }
             break;
         }
-        case 5:{
+        case 5:
             printf("Obrigado por usar a calculadora! Ate a proxima.\n");
             exit(0);
-        }
-        default:
-            printf("Resposta invalida. Escolha uma opcao de 1 a 5.\n");
     }
-    return opcao_escolhida;
-}
-
-char outra_operacao(){
-    char afirmacao;
-    do {
-        printf("Deseja realizar outra operacao? (s/n): ");
-        scanf(" %c", &afirmacao);
-        if (afirmacao == 's' || afirmacao == 'S') {
-            return 's';
-        } else if (afirmacao == 'n' || afirmacao == 'N') {
-            printf("Obrigado por usar a calculadora! Ate a proxima.\n");
-            return 'n';
-        } else {
-            printf("Resposta invalida. Digite 's' para sim ou 'n' para nao.\n");
-        }
-    } while (1);
+    return opcao;
 }
 
 int main() {
     char continuar = 's';
-    while (continuar == 's') {
+    while (continuar == 's' || continuar == 'S') {
         menu();
-        continuar = outra_operacao();
+        printf("Deseja realizar outra operacao? (s/n): ");
+        scanf(" %c", &continuar);
     }
+    printf("Obrigado por usar a calculadora! Ate a proxima.\n");
+    return 0;
 }
