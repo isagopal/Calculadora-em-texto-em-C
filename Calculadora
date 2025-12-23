@@ -13,15 +13,19 @@ void outra_operacao(){
     } else if (afirmacao == 'n'
     || afirmacao == 'N'){
         printf("Obrigado por usar a calculadora! Ate a proxima.\n");
+        exit(0);
     } else {
-        do{
+        while (afirmacao != 's' && afirmacao != 'S' && afirmacao != 'n' && afirmacao != 'N'){
             printf("Resposta invalida. Por favor, digite 's' para sim ou 'n' para nao.\n");
             scanf(" %c", &afirmacao);
-        } while (afirmacao != 's'
-                && afirmacao != 'S'
-                && afirmacao != 'n'
-                && afirmacao != 'N');
-    }
+            if (afirmacao == 's' || afirmacao == 'S') {
+                menu();
+            } else if (afirmacao == 'n' || afirmacao == 'N') {
+                printf("Obrigado por usar a calculadora! Ate a proxima.\n");
+            exit(0);
+            }
+        }
+    }    
 }
 
 int menu(){
