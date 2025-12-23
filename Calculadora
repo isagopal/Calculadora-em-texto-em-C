@@ -8,6 +8,10 @@ int menu() {
     printf("1. Adicao\n2. Subtracao\n3. Multiplicacao\n4. Divisao\n5. Sair\n");
     printf("Opcao: \n");
     scanf("%d", &opcao);
+    if (opcao < 1 && opcao > 5) {
+        printf("Resposta invalida. Digite uma opcao dentro do intervalo estabelecido (1 a 5).\n");
+        return menu();
+    }
 
     switch(opcao) {
         case 1: {
