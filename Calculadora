@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int menu();
 
@@ -23,55 +24,6 @@ void outra_operacao(){
     }
 }
 
-void soma(){
-    float s, a, b;
-    printf("Digite o primeiro numero: \n");
-    scanf("%f", &a);
-    printf("Digite o segundo numero: \n");
-    scanf("%f", &b);
-    s = a+b;
-    printf("Resultado: %f + %f = %f\n", a, b, s);
-    outra_operacao();
-}
-
-void subtracao(){
-    float sub, a, b;
-    printf("Digite o primeiro numero: \n");
-    scanf("%f", &a);
-    printf("Digite o segundo numero: \n");
-    scanf("%f", &b);
-    sub = a-b;
-    printf("Resultado: %f - %f = %f\n", a, b, sub);
-    outra_operacao();
-}
-
-void multiplicacao(){
-    float m, a, b;
-    printf("Digite o primeiro numero: \n");
-    scanf("%f", &a);
-    printf("Digite o segundo numero: \n");
-    scanf("%f", &b);
-    m = a*b;
-    printf("Resultado: %f * %f = %f\n", a, b, m);
-    outra_operacao();
-}
-
-void divisao(){
-    float d, a, b;
-    printf("Digite o primeiro numero: \n");
-    scanf("%f", &a);
-    printf("Digite o segundo numero: \n");
-    scanf("%f", &b);
-    if (b == 0) {
-        printf("Erro: Divisão por zero não é permitida.");
-        outra_operacao();
-    } else {
-        d = a/b;
-        printf("Resultado: %f / %f = %f\n", a, b, d);
-        outra_operacao();
-    }
-}
-
 int menu(){
     int opcao_escolhida;
     printf("===============================\n\tCalculadora Simples\n===============================\n");
@@ -82,20 +34,53 @@ int menu(){
 
     switch(opcao_escolhida) {
         case 1: 
-            soma();
+            float soma, a, b;
+            printf("Digite o primeiro numero: \n");
+            scanf("%f", &a);
+            printf("Digite o segundo numero: \n");
+            scanf("%f", &b);
+            soma = a+b;
+            printf("Resultado: %f + %f = %f\n", a, b, soma);
+            outra_operacao();
             break;
         case 2:
-            subtracao();
+            float sub, c, d;
+            printf("Digite o primeiro numero: \n");
+            scanf("%f", &c);
+            printf("Digite o segundo numero: \n");
+            scanf("%f", &d);
+            sub = c-d;
+            printf("Resultado: %f - %f = %f\n", c, d, sub);
+            outra_operacao();
             break;
         case 3:
-            multiplicacao();
+            float mult, e, f;
+            printf("Digite o primeiro numero: \n");
+            scanf("%f", &e);
+            printf("Digite o segundo numero: \n");
+            scanf("%f", &f);
+            mult = e*f;
+            printf("Resultado: %f * %f = %f\n", e, f, mult);
+            outra_operacao();
             break;
         case 4:
-            divisao();
+            float div, g, h;
+            printf("Digite o primeiro numero: \n");
+            scanf("%f", &g);
+            printf("Digite o segundo numero: \n");
+            scanf("%f", &h);
+            if (b == 0) {
+                printf("Erro: Divisão por zero não é permitida.");
+                outra_operacao();
+            } else {
+                div = g/h;
+                printf("Resultado: %f / %f = %f\n", g, h, div);
+                outra_operacao();
+            }
             break;
         case 5:
             printf("Obrigado por usar a calculadora! Ate a proxima.\n");
-            break;
+            exit(0);
         default:
             do{
                 printf("Resposta invalida. Por favor, digite uma das opcoes validas no menu.\n");
