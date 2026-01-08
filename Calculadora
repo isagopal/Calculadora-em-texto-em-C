@@ -7,10 +7,19 @@ int menu() {
     printf("Selecione uma operacao:\n");
     printf("1. Adicao\n2. Subtracao\n3. Multiplicacao\n4. Divisao\n5. Sair\n");
     printf("Opcao: \n");
-    scanf("%d", &opcao);
-    if (opcao < 1 || opcao > 5) {
+    
+    int resultado = scanf("%d", &opcao);
+    if (resultado != 1) {
         printf("Resposta invalida. Digite uma opcao dentro do intervalo estabelecido (1 a 5).\n");
-        return menu();
+        while ((getchar()) != '\n'
+                && (getchar()) != 1
+                && (getchar()) != 2
+                && (getchar()) != 3
+                && (getchar()) != 4
+                && (getchar()) != 5) {
+            printf("Entrada inválida. Por favor, insira um número.\n");
+            return menu();
+        };
     }
 
     switch(opcao) {
