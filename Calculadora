@@ -89,12 +89,3 @@ int menu() {
     }
     return opcao;
 }
-
-int main() {
-    char continuar = 's';
-    while (continuar == 's' || continuar == 'S') {
-        menu();
-        continuar = outra_operacao();
-    }
-    return 0;
-}
