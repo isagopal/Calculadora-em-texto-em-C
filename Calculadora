@@ -44,7 +44,6 @@ int menu() {
             printf("Digite o segundo numero: ");
             scanf("%f", &b);
             printf("Resultado: %.2f + %.2f = %.2f\n", a, b, a+b);
-            outra_operacao();
             break;
         }
         case 2: {
@@ -54,7 +53,6 @@ int menu() {
             printf("Digite o segundo numero: ");
             scanf("%f", &d);
             printf("Resultado: %.2f - %.2f = %.2f\n", c, d, c-d);
-            outra_operacao();
             break;
         }
         case 3: {
@@ -64,7 +62,6 @@ int menu() {
             printf("Digite o segundo numero: ");
             scanf("%f", &f);
             printf("Resultado: %.2f * %.2f = %.2f\n", e, f, e*f);
-            outra_operacao();
             break;
         }
         case 4: {
@@ -78,7 +75,6 @@ int menu() {
             } else {
                 printf("Resultado: %.2f / %.2f = %.2f\n", g, h, g/h);
             }
-            outra_operacao();
             break;
         }
         case 5:
@@ -88,4 +84,13 @@ int menu() {
             printf("Opcao invalida. Digite um numero de 1 a 5.\n");
     }
     return opcao;
+}
+
+int main() {
+    char continuar = 's';
+    while (continuar == 's' || continuar == 'S') {
+        menu();
+        continuar = outra_operacao();
+    }
+    return 0;
 }
